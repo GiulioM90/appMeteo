@@ -64,3 +64,27 @@ console.log(data.list[0].components.co);
     }
     request.send();
 };
+cercaC.onclick = function (){
+    let apiKey = '6dea526569544b42a7c23ff1c6dc21fb';
+   // let city = document.getElementById('pollution').value;
+    let city = document.getElementById('namecity').value;
+    let uri = `http://api.openweathermap.org/geo/1.0/direct?q=`+city+`&limit=5&appid=`+apiKey;
+    //let uri = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+apiKey+'&lang=it'+'&units=metric';
+
+    var request = new XMLHttpRequest();
+    request.open('GET',uri, true);
+    request.onload = function (){
+        if (request.status >= 200 && request.status <400){
+            var data = JSON.parse(this.response);
+          //  var temp = data.main.temp;
+          document.getElementById('foundedlat').innerHTML= `Latitudine: ${data[2].lat}`;
+          document.getElementById('foundedlon').innerHTML= `Longitudine: ${data[2].lon}`;
+console.log(data[2]);
+
+        }else {
+                ris = document.getElementById('ris').innerHTML = `Controlla meglio cosa hai scritto che non posso avviare la ricerca`
+    
+            }
+        }
+        request.send();
+    };
