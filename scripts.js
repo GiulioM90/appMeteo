@@ -1,5 +1,5 @@
 cerca.onclick = function (){
-    let apiKey = '6dea526569544b42a7c23ff1c6dc21fb';
+    let apiKey = '';
     let city = document.getElementById('weath').value;
     let uri = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+apiKey+'&lang=it'+'&units=metric';
 
@@ -24,7 +24,7 @@ cerca.onclick = function (){
     request.send();
 };
 cercaPoll.onclick = function (){
-    let apiKey = '6dea526569544b42a7c23ff1c6dc21fb';
+    let apiKey = '';
    // let city = document.getElementById('pollution').value;
     let lat = document.getElementById('lat').value;
     let lon = document.getElementById('lon').value;
@@ -65,7 +65,7 @@ console.log(data.list[0].components.co);
     request.send();
 };
 cercaC.onclick = function (){
-    let apiKey = '6dea526569544b42a7c23ff1c6dc21fb';
+    let apiKey = '';
    // let city = document.getElementById('pollution').value;
     let city = document.getElementById('namecity').value;
     let uri = `http://api.openweathermap.org/geo/1.0/direct?q=`+city+`&limit=5&appid=`+apiKey;
